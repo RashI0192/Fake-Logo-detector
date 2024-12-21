@@ -32,19 +32,24 @@ Modules used - Numpy,Pandas,matplotlib.pyplot ,Tensorflow,Keras
          
       
    </li>
+   
+   
    <li>Dataset Spliting
       <ul>
-            <li>I used get_dataset_partitions_tf function to split my dataset into  training, validation and test . The function created ensured reproducibilty by setting a seed for sufflting , Shufftling the dataset prevents the model from learning unintentional pattern.</li>
-            <li>Each subset is created with the correct size ensuring a balnced split for reliable training.</li>
-            <li> 80/10/10 Split - the majority of the data is used for training to ensure the model learns general patterns and features. Improve its ability to generalise
+         
+         <li>I used get_dataset_partitions_tf function to split my dataset into  training, validation and test . The function created ensured reproducibilty by setting a seed for sufflting , Shufftling the dataset prevents the model from learning unintentional pattern.</li>
+         <li>Each subset is created with the correct size ensuring a balnced split for reliable training.</li>
+         <li> 80/10/10 Split - the majority of the data is used for training to ensure the model learns general patterns and features. Improve its ability to generalise
    10% Validation used </li>
-   <li>A larger training set helps the model improve its ability to generalize.10% Validation set to tune hyperparameters and assess the model's performance during training. This is to prevent overfitting and show how well the model is generalising to unseen data during training.</li>
-   <li>10% Test split = final evaluation to check model's performance</li>
-   <li>I also catched data to speed up the training process[CNN model I used at my first try was estimated to run for 5+hours due to unavaibility of GPU] . This ensured data is loaded into memory only once so less overhead for epochs.</li>
-   <li>Also Prefetch data . This ensures that the  next batch of data is prepared while the current batch is being processed</li>
+         <li>A larger training set helps the model improve its ability to generalize.10% Validation set to tune hyperparameters and assess the model's performance during training. This is to prevent overfitting and show how well the model is generalising to unseen data during training.</li>
+         <li>10% Test split = final evaluation to check model's performance</li>
+         <li>I also catched data to speed up the training process[CNN model I used at my first try was estimated to run for 5+hours due to unavaibility of GPU] . This ensured data is loaded into memory only once so less overhead for epochs.</li>
+         <li>Also Prefetch data . This ensures that the  next batch of data is prepared while the current batch is being processed</li>
          
       </ul>
+      
    </li>
+   
    
    <li>Pre-Processing and Data Augmentation
       <ul>
