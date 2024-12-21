@@ -1,23 +1,48 @@
 <h1 style="color: #3498db; text-align: center;">Fake Logo Detector</h1>
 <br/>
 This is imported from my kaggle - https://www.kaggle.com/code/ray0911/fake-logo-detection-using-tensorflow-keras.
+<br/>
 Version 4 - Data cleaning and EDA done
+<br/>
 version 6- finishes the CNN network 
+<br/>
 Version 7 - Complete final code - included here. 
+<br/>
 
 Below Is a Brief Explaination
+<br/>
 Modules used - Numpy,Pandas,matplotlib.pyplot ,Tensorflow,Keras
+<br/>
+<h1 style="color: #3498db; text-align: center;">Work Flow</h1>
 
-Work Flow :
-1. (Data Cleaning And EDA) :
-   a) Uneccesary comoulm - Tagline Column Dropped as only working with the images
-   b)Ensuring No Null/Duplicate values
-   c)Converted Categorical values ['geniune ','fake'] into numerical for compatibility
-   d) Checked for bias in data by comparing the unique labled values.
-   e) Shuffled Dataset to elimate any ordering bias that may impact model training.
-   f) For my own convience I adjusted the filepaths. The orignal filepaths were messy. I simplified access to image files stored in multiple folders by standardizing
+<ol>
+   <li>Data Cleaning And EDA
+      <ul>
+         <li> Uneccesary comoulm - Tagline Column Dropped as only working with the images</li>
+         <li> Ensuring No Null/Duplicate values</li>
+         <li>Converted Categorical values ['geniune ','fake'] into numerical for compatibility</li>
+         <li> Checked for bias in data by comparing the unique labled values.</li>
+         <li>Shuffled Dataset to elimate any ordering bias that may impact model training.</li>
+         <li>For my own convience I adjusted the filepaths. The orignal filepaths were messy. I simplified access to image files stored in multiple folders by standardizing
+   their paths. This helped me with  image loading in subsequent steps.</li>
+   <li>Image Display</li>
+         
+         
+      </ul>
+   </li>
+   <li>Dataset Spliting
+   </li>
+</ol>
+<br/>
+1. Data Cleaning And EDA :
+   - a) Uneccesary comoulm - Tagline Column Dropped as only working with the images
+   - b)Ensuring No Null/Duplicate values
+   - c)Converted Categorical values ['geniune ','fake'] into numerical for compatibility
+   - d) Checked for bias in data by comparing the unique labled values.
+   - e) Shuffled Dataset to elimate any ordering bias that may impact model training.
+   - f) For my own convience I adjusted the filepaths. The orignal filepaths were messy. I simplified access to image files stored in multiple folders by standardizing
    their paths. This helped me with  image loading in subsequent steps.
-   g) Image Display
+   - g) Image Display
 
 2. Dataset Spliting
    a) I used get_dataset_partitions_tf function to split my dataset into  training, validation and test . The function created ensured reproducibilty by setting a seed for sufflting , Shufftling the dataset prevents the model from learning unintentional pattern.
