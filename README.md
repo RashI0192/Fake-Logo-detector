@@ -25,13 +25,39 @@ Modules used - Numpy,Pandas,matplotlib.pyplot ,Tensorflow,Keras
          <li>Shuffled Dataset to elimate any ordering bias that may impact model training.</li>
          <li>For my own convience I adjusted the filepaths. The orignal filepaths were messy. I simplified access to image files stored in multiple folders by standardizing
    their paths. This helped me with  image loading in subsequent steps.</li>
-   <li>Image Display</li>
+         <li>Image Display</li>
+         </ul>
          
+         
+         
+      
+   </li>
+   <li>Dataset Spliting
+      <ul>
+            <li>I used get_dataset_partitions_tf function to split my dataset into  training, validation and test . The function created ensured reproducibilty by setting a seed for sufflting , Shufftling the dataset prevents the model from learning unintentional pattern.</li>
+            <li>Each subset is created with the correct size ensuring a balnced split for reliable training.</li>
+            <li> 80/10/10 Split - the majority of the data is used for training to ensure the model learns general patterns and features. Improve its ability to generalise
+   10% Validation used </li>
+   <li>A larger training set helps the model improve its ability to generalize.10% Validation set to tune hyperparameters and assess the model's performance during training. This is to prevent overfitting and show how well the model is generalising to unseen data during training.</li>
+   <li>10% Test split = final evaluation to check model's performance</li>
+   <li>I also catched data to speed up the training process[CNN model I used at my first try was estimated to run for 5+hours due to unavaibility of GPU] . This ensured data is loaded into memory only once so less overhead for epochs.</li>
+   <li>Also Prefetch data . This ensures that the  next batch of data is prepared while the current batch is being processed
+</li>
          
       </ul>
    </li>
-   <li>Dataset Spliting
+   
+   <li>Pre-Processing and Data Augmentation
+      <ul>
+      <li>Resizingto standardizes all images to the same size (224x224) for consistent input to the model.Rescaling to normalise pixel values (scaling them to [0, 1]) =>model converges faster during training.</li>
+      <li> Data augmentation does random flipping and rotation to introduce variations to the dataset. Hence, helping the model generalise better to unseen data by stimulating real world variations.</li>
+      
+         
+      </ul>
    </li>
+   <li>Model Architechture </li>
+   
+   
 </ol>
 <br/>
 1. Data Cleaning And EDA :
