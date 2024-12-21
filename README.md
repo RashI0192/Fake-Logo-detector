@@ -1,5 +1,6 @@
 <h1 style="color: #3498db; text-align: center;">Fake Logo Detector</h1>
-![Result Image](Result.png)
+<img width="928" alt="Result" src="https://github.com/user-attachments/assets/553943e4-78d6-432a-9a40-fdbceb0a5ce2" />
+
 
 <br/>
 This is imported from my kaggle - https://www.kaggle.com/code/ray0911/fake-logo-detection-using-tensorflow-keras.
